@@ -24,7 +24,7 @@ void sig_Ep(){
 	gStyle->SetPadLeftMargin(0.12);
 	gStyle->SetPadBottomMargin(0.22);
 	gStyle->SetPadTopMargin(0.4);
-
+double x_d = 3.8;
 
 	TCanvas *c1  =  new TCanvas("c1","c1",40,200,1200,1200);
         c1->Divide(1,2,0.01,0.001);
@@ -120,7 +120,7 @@ double ax_offx = 1.0;
   Graph->GetYaxis()->SetLabelSize(lsz);
   Graph->GetYaxis()->CenterTitle();
   Graph->GetXaxis()->CenterTitle();
-  Graph->GetXaxis()->SetLimits(4,17);
+  Graph->GetXaxis()->SetLimits(x_d,17);
   Graph->GetYaxis()->SetRangeUser(0.01,1);
   Graph->SetMarkerColor(kWhite);
   int Exp_N, Exp_NN[count_e];
@@ -273,14 +273,14 @@ double ax_offx = 1.0;
 
 	double a_1[mk],a_2[mk],a_3[mk],exl[mk],exh[mk];
 	ifstream inputfile50;
-	inputfile50.open("fitplot_Eric.dat"); 
+	inputfile50.open("datafiles/fitplot_Eric.dat"); 
 	double a2_max[mk],a2_min[mk];
 	for(int i=0;i<mk;i++){
 		inputfile50>>fixed>>a_1[i]>>a_2[i]>>a_3[i];
 		a2_max[i] = a_3[i];
 //		a2_min[i] = a_2[i] - a_3[i];
 		exl[i] =0; exh[i]=0;
-		//cout<<a_1[i]<< "  "<<a_2[i]<<endl;
+		cout<<a_1[i]<< "  "<<a_2[i]<<endl;
 	}
 	inputfile50.close();
 
@@ -452,7 +452,13 @@ g_band->SetFillColor(12);
 	mg->Add(g_band,"A3");
 
 
-
+	TGraph* g_nband = new TGraph(mk,a_1,a_2);
+	g_nband->SetLineStyle(1);
+	g_nband->SetLineColor(1);
+        g_nband->SetLineWidth(2);
+        //g_nband->Draw("");
+         
+	mg->Add(g_nband,"L");
       
         mg->Add(t1);
 	mg->Add(t2);
@@ -466,7 +472,7 @@ g_band->SetFillColor(12);
 	mg->Draw("APP");
 	mg->GetHistogram()->SetMaximum(3.7);
 	mg->GetHistogram()->SetMinimum(-1.3);
-	mg->GetXaxis()->SetLimits(4,17);
+	mg->GetXaxis()->SetLimits(x_d,17);
 	mg->GetXaxis()->CenterTitle();
 	mg->GetYaxis()->CenterTitle();
         mg->GetYaxis()->SetTitleSize(ax_ti);
@@ -484,10 +490,10 @@ g_band->SetFillColor(12);
 
 
 
-	TLine * linek = new TLine (4,0,17,0);
+	TLine * linek = new TLine (x_d,0,17,0);
 	linek->SetLineStyle(3);
 	linek->Draw();
-	TLine * line2 = new TLine (4,1,17,1);
+	TLine * line2 = new TLine (x_d,1,17,1);
 	line2->SetLineStyle(3);
 	line2->Draw();
 	TLegend *leg = new TLegend(0.15,0.74,0.4,0.95);
@@ -519,10 +525,7 @@ g_band->SetFillColor(12);
      t11->Draw();
 
 */
-	TGraph* g_nband = new TGraph(mk,a_1,a_2);
-	g_nband->SetLineStyle(1);
-        g_nband->SetLineWidth(2);
-        g_nband->Draw("same");
+
 
 
 c1->Update();
