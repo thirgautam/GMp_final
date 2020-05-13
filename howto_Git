@@ -9,6 +9,5 @@
 5. To add a file  to a commit, you first ned to add it to the stagging environment
     git add howto_git
 6. Create a commit:
-   git config --global tns.gautam@gmail.com
-   git config --thirgautam
-   commit -m "Thir's first commit"
+   git commit -m "Thir's first commit"
+   git comitt -a
