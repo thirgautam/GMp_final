@@ -1,4 +1,5 @@
---------Git Thir ----------
+----------RamShay..............
+
 1. Make directory
     mkdir git_thir
     cd git_thir
@@ -12,4 +13,83 @@
 6. Create a commit:
    git commit -m "Thir's first commit"
    git comitt -a
-------------
+
+7. git checkout GMp1 (branch)
+8 git branch (Confirom youu are now working on that branch)
+
+In branch:  
+            
+            git add filename
+            git commit -m " Thir daka ho"
+            git push origin GMp1
+
+
+git push origin --delete GMp1
+git branch -D filename
+
+
+ 2065  git checkout howto_Git
+ 2066  git status
+ 2067  git chekout -b test
+ 2068  git branch
+ 2069  git branch -r
+ 2071  git remote -v
+ 2075  git checkout GMp1
+ 2076  git branch
+ 2077  git checkout master
+ 2080  git branch
+ 2081  git diff --master
+ 2084  vi howto_Git 
+ 2085  ls
+ 2086  git status
+ 2087  git add howto_Git 
+ 2088  git status
+ 2089  git commit -m "New commit"
+ 2090  git status
+ 2091  git diff ..master
+ 2092  git push
+ 2093  git push test
+
+---------------------------------------------------------
+2053  git clone https://github.com/thirgautam/GMp_final.git
+ 2054  ls
+ 2055  cd GMp_final/
+ 2056  ls
+ 2057  vi howto_Git 
+ 2058  vi ../howto_Git 
+ 2059  vi howto_Git 
+ 2060  ls
+ 2061  git status
+ 2062  cd ..
+ 2063  cd GMp_final/
+ 2064  ls
+ 2065  git checkout howto_Git
+ 2066  git status
+ 2067  git chekout -b test
+ 2068  git branch
+ 2069  git branch -r
+ 2071  git remote -v
+ 2072  ls
+ 2073  git chekout origin/branch
+ 2074  git chekout origin/GMp1
+ 2075  git checkout origin/GMp1
+ 2076  git branch
+ 2077  git checkout master
+ 2078  git branch
+ 2079  git checkout -b test
+ 2080  git branch
+ 2081  git diff --master
+ 2082  git diff ..master
+ 2083  ls
+ 2084  vi howto_Git 
+ 2085  ls
+ 2086  git status
+ 2087  git add howto_Git 
+ 2088  git status
+ 2089  git commit -m "New commit"
+ 2090  git status
+ 2091  git diff ..master
+ 2092  git push
+ 2093  git push test
+ 2094  git push origin test
+
