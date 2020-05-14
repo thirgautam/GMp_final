@@ -7,6 +7,7 @@ void sig_Ep(){
 	gStyle->SetTitleFontSize(0.06);
 	gStyle->SetTitleOffset(0.06);
 	gStyle->SetTitleFont(42);
+	//gStyle->SetNdivisions(510);
 	gStyle->SetNdivisions(510);
 	gStyle->SetTitleYOffset(0.6);
 	gStyle->SetTitleXOffset(0.65);
@@ -24,7 +25,8 @@ void sig_Ep(){
 	gStyle->SetPadLeftMargin(0.12);
 	gStyle->SetPadBottomMargin(0.22);
 	gStyle->SetPadTopMargin(0.4);
-double x_d = 3.8;
+double x_d = 0;
+double x_u = 18.;
 
 	TCanvas *c1  =  new TCanvas("c1","c1",40,200,1200,1200);
         c1->Divide(1,2,0.01,0.001);
@@ -32,7 +34,7 @@ double x_d = 3.8;
 	gPad->SetBottomMargin(0.0);
 	gPad->SetTopMargin(0.23);
        
-       	gStyle->SetTickLength(0.0,"X");
+//       	gStyle->SetTickLength(0.0,"X");
 	//gPad->SetPad(0.0,0.4,1.0,1.0);
   ifstream infile("datafiles/for_table.dat");
   string line;
@@ -120,10 +122,13 @@ double ax_offx = 1.0;
   Graph->GetYaxis()->SetLabelSize(lsz);
   Graph->GetYaxis()->CenterTitle();
   Graph->GetXaxis()->CenterTitle();
-  Graph->GetXaxis()->SetLimits(x_d,17);
+  Graph->GetXaxis()->SetLimits(x_d,x_u);
   Graph->GetYaxis()->SetRangeUser(0.01,1);
   Graph->SetMarkerColor(kWhite);
+  Graph->GetXaxis()->SetTickLength(0.0);
+  Graph->GetYaxis()->SetNdivisions(505);
   int Exp_N, Exp_NN[count_e];
+
 
 
   Double_t* nx = Graph->GetX();
@@ -472,7 +477,7 @@ g_band->SetFillColor(12);
 	mg->Draw("APP");
 	mg->GetHistogram()->SetMaximum(3.9);
 	mg->GetHistogram()->SetMinimum(-1.3);
-	mg->GetXaxis()->SetLimits(x_d,17);
+	mg->GetXaxis()->SetLimits(x_d,x_u);
 	mg->GetXaxis()->CenterTitle();
 	mg->GetYaxis()->CenterTitle();
         mg->GetYaxis()->SetTitleSize(ax_ti);
@@ -485,21 +490,22 @@ g_band->SetFillColor(12);
         mg->GetXaxis()->CenterTitle();
         mg->GetXaxis()->SetLabelSize(lsz);
         mg->GetYaxis()->SetLabelSize(lsz);
+  mg->GetXaxis()->SetTickLength(0.06);
 
 
 
 
 
-	TLine * linek = new TLine (x_d,0,17,0);
+	TLine * linek = new TLine (x_d,0,x_u,0);
 	linek->SetLineStyle(3);
 	linek->Draw();
-	TLine * line2 = new TLine (x_d,1,17,1);
+	TLine * line2 = new TLine (x_d,1,x_u,1);
 	line2->SetLineStyle(3);
 	line2->Draw();
 	TLegend *leg = new TLegend(0.15,0.74,0.4,0.95);
 	leg->AddEntry(t5,"Table 1","p");
-	leg->AddEntry(t1,"Ref. [23]","p");
-	leg->AddEntry(t7,"Ref. [24]","p");
+	leg->AddEntry(t1,"Ref. [22]","p");
+	leg->AddEntry(t7,"Ref. [23]","p");
 
 	leg->SetTextSize(0.04);
 	leg->SetBorderSize(0);
@@ -508,8 +514,8 @@ g_band->SetFillColor(12);
 	TLegend *leg2 = new TLegend(0.3,0.74,0.45,0.95);
 
 	leg2->AddEntry(t2,"Ref. [9]","p");
-	leg2->AddEntry(t3,"Ref. [21]","p");
-	leg2->AddEntry(t4,"Ref. [38]","p");
+	leg2->AddEntry(t3,"Ref. [20]","p");
+	leg2->AddEntry(t4,"Ref. [13]","p");
 	leg2->SetTextSize(0.04);
 	leg2->SetBorderSize(0);
 	leg2->Draw();
