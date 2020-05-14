@@ -537,8 +537,8 @@ g_band->SetFillColor(12);
 c1->Update();
 gPad->Modified();
 	
-	c1->SaveAs("/home/thir/Desktop/GMP_/Ref_new/Plots/Fig1.pdf");
-	c1->SaveAs("/home/thir/Desktop/GMP_/Ref_new/Plots/Fig1.png");
+	c1->SaveAs("paperGMp12/Plots/Fig1.pdf");
+	c1->SaveAs("paperGMp12/Plots/Fig1.png");
 	c1->SaveAs("plots/Fig1.png");
 	c1->SaveAs("plots/Fig1.pdf");
 }
