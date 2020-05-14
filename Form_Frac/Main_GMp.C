@@ -129,7 +129,7 @@ TCanvas *canv = new TCanvas("canv","canv",50,200,1200,1200);
 
    TH1F* h_k = (TH1F* )mg->Clone();
    
-    mg->GetXaxis()->SetLimits(4,18);
+    mg->GetXaxis()->SetLimits(0,18);
     mg->GetYaxis()->SetRangeUser(0.7,1.15);
     mg->GetYaxis()->SetTitle("G_{M}/#mu_{p} G_{D}, OPE");
     mg->GetXaxis()->SetTitle("Q^{2}, (GeV/#it{c})^{2}");
@@ -141,14 +141,14 @@ TCanvas *canv = new TCanvas("canv","canv",50,200,1200,1200);
                 mg->GetXaxis()->GetXmax(),
                 0.8);
     line->Draw("same");
-    line->SetLineStyle(3);   
+    line->SetLineStyle(2);   
     TLine *line1 = 
         new TLine(mg->GetXaxis()->GetXmin(),
                 1,
                 mg->GetXaxis()->GetXmax(),
                 1);
     line1->Draw("same");
-    line1->SetLineStyle(3);   
+    line1->SetLineStyle(2);   
     g_b->SetFillColor(4);
     g_b ->SetFillStyle(10);
   //TPad *pad = new TPad("", "",0.5208551,0.5115431,0.8952033,0.8967193);
@@ -160,6 +160,6 @@ TCanvas *canv = new TCanvas("canv","canv",50,200,1200,1200);
    //pad->DrawFrame(0,0.7,33,1.15);  
    pad->DrawFrame(0,0.8,23,0.9);  
    h_k->Draw("SameP");
-    canv->SaveAs("/home/thir/Desktop/GMP_/Ref_new/Plots/Fig2.png");
-    canv->SaveAs("/home/thir/Desktop/GMP_/Ref_new/Plots/Fig2.pdf");
+    canv->SaveAs("../paperGMp12/Plots/Fig2.png");
+    canv->SaveAs("../paperGMp12/Plots/Fig2.pdf");
 }
