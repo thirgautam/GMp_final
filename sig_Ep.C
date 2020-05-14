@@ -470,7 +470,7 @@ g_band->SetFillColor(12);
 
 
 	mg->Draw("APP");
-	mg->GetHistogram()->SetMaximum(3.7);
+	mg->GetHistogram()->SetMaximum(3.9);
 	mg->GetHistogram()->SetMinimum(-1.3);
 	mg->GetXaxis()->SetLimits(x_d,17);
 	mg->GetXaxis()->CenterTitle();
