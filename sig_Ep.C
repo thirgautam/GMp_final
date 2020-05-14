@@ -497,10 +497,10 @@ g_band->SetFillColor(12);
 
 
 	TLine * linek = new TLine (x_d,0,x_u,0);
-	linek->SetLineStyle(3);
+	linek->SetLineStyle(2);
 	linek->Draw();
 	TLine * line2 = new TLine (x_d,1,x_u,1);
-	line2->SetLineStyle(3);
+	line2->SetLineStyle(2);
 	line2->Draw();
 	TLegend *leg = new TLegend(0.15,0.74,0.4,0.95);
 	leg->AddEntry(t5,"Table 1","p");
