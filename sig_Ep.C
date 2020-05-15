@@ -248,19 +248,15 @@ double ax_offx = 1.0;
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
     tex->Draw();
-    tex = new TLatex(8.801162,1.035,"4");
+    tex = new TLatex(9.11162,1.035,"4");
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
     tex->Draw();
-    tex = new TLatex(9.605809,1.035,"5");
+    tex = new TLatex(12.199937,1.035,"5");
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
     tex->Draw();
-    tex = new TLatex(12.199937,1.035,"6");
-    tex->SetTextColor(2);
-    tex->SetLineWidth(2);
-    tex->Draw();
-    tex = new TLatex(15.6797,1.035,"7");
+    tex = new TLatex(15.6797,1.035,"6");
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
     tex->Draw();
@@ -505,8 +501,8 @@ g_band->SetFillColor(12);
 	line2->Draw();
 	TLegend *leg = new TLegend(0.15,0.74,0.4,0.95);
 	leg->AddEntry(t5,"Table 1","p");
-	leg->AddEntry(t1,"Ref. [22]","p");
-	leg->AddEntry(t7,"Ref. [23]","p");
+	leg->AddEntry(t1,"Ref. [26]","p");//Christy
+	leg->AddEntry(t7,"Ref. [27]","p"); //Qattan
 
 	leg->SetTextSize(0.04);
 	leg->SetBorderSize(0);
@@ -514,9 +510,9 @@ g_band->SetFillColor(12);
 
 	TLegend *leg2 = new TLegend(0.3,0.74,0.45,0.95);
 
-	leg2->AddEntry(t2,"Ref. [9]","p");
-	leg2->AddEntry(t3,"Ref. [20]","p");
-	leg2->AddEntry(t4,"Ref. [13]","p");
+	leg2->AddEntry(t2,"Ref. [9]","p"); //Walker
+	leg2->AddEntry(t3,"Ref. [24]","p");//NE11
+	leg2->AddEntry(t4,"Ref. [17]","p"); //Puckett
 	leg2->SetTextSize(0.04);
 	leg2->SetBorderSize(0);
 	leg2->Draw();
