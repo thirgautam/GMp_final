@@ -223,8 +223,9 @@ double ax_offx = 1.0;
     }
  //   if(/*k!=2 &&k!=4 &&k!=3*/){
 
-      //b[k] = new TBox(mn[k]-0.16,0.08,mx[k]+0.16,0.99);
+     // b[k] = new TBox(mn[k]-0.16,0.08,mx[k]+0.16,0.99);
       b[k] = new TBox(mn[k]-0.22,0.015,mx[k]+0.22,0.99);
+    // b[k] = new TBox(mn[k]-0.1,0.015,mx[k]+0.1,0.99);
       b[k]->SetFillColor(3);
       b[k]->SetLineColor(0+1);
       b[k]->SetFillStyle(0);
@@ -264,14 +265,14 @@ double ax_offx = 1.0;
     tex->SetLineWidth(2);
     tex->Draw();
 
-    TPaveText *t11 = new TPaveText(0.15,0.08,0.2,0.76,"NDC");
+ /*   TPaveText *t11 = new TPaveText(0.15,0.08,0.2,0.76,"NDC");
     t11->AddText(" ");
     t11->SetShadowColor(0);
     t11->SetFillColor(0);
     t11->SetTextSize(0.04);
     t11->SetBorderSize(0);
     t11->Draw("same");
-
+*/
   }
 
 	const  Int_t mk = 331;
@@ -306,7 +307,7 @@ double ax_offx = 1.0;
 	const  Int_t m2 = 12;
 	const  Int_t m3 = 8;
 	const  Int_t m4 = 7;
-	const  Int_t m5 = 7;
+	const  Int_t m5 = 6;
 	const  Int_t m7 = 3;
 
 	double Q21[m1],ge_gm1[m1], ege_gm1[m1], a1_max[m1]=0.,a1_min[m1]=0.;
