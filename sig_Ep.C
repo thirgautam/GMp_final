@@ -238,25 +238,31 @@ double ax_offx = 1.0;
     tex = new TLatex(5.826406,1.035,"1");
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
+    tex->SetTextSize(0.07);
     tex->Draw();
     tex = new TLatex(6.923652,1.035,"2");
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
+    tex->SetTextSize(0.07);
     tex->Draw();
 
     tex = new TLatex(7.825832,1.035,"3");
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
+    tex->SetTextSize(0.07);
     tex->Draw();
     tex = new TLatex(9.11162,1.035,"4");
     tex->SetTextColor(2);
+    tex->SetTextSize(0.07);
     tex->SetLineWidth(2);
     tex->Draw();
     tex = new TLatex(12.199937,1.035,"5");
+    tex->SetTextSize(0.07);
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
     tex->Draw();
     tex = new TLatex(15.6797,1.035,"6");
+    tex->SetTextSize(0.07);
     tex->SetTextColor(2);
     tex->SetLineWidth(2);
     tex->Draw();
@@ -452,8 +458,29 @@ double ax_offx = 1.0;
 g_band->SetFillColor(12);
 	g_band->SetFillStyle(3001);
 	mg->Add(g_band,"A3");
+double new_x1[10] = {0,1,2,3,4,5,7,6,8,9.82};
+double new_x2[10] = {9.82,10,11,12,13,14,15,16,17,18};
+double new_y1[10],new_y2[10];
+for(int nn=0;nn<10;nn++){
+new_y1[nn] = 1.0-0.105*new_x1[nn];
+new_y2[nn] = 0.105*(new_x2[nn] - 9.82);
+}
 
-
+TGraph *gg1 = new TGraph(10,new_x1,new_y1);
+	gg1->SetLineStyle(1);
+	gg1->SetLineColor(2);
+        gg1->SetLineWidth(2);
+        gg1->SetLineStyle(2);
+TGraph *gg2 = new TGraph(10,new_x2,new_y2);
+	gg2->SetLineStyle(1);
+	gg2->SetLineColor(2);
+        gg2->SetLineWidth(2);
+        gg2->SetLineStyle(2);
+mg->Add(gg1,"L");
+mg->Add(gg2,"L");
+//TF1 *f1  = new TF1("f1","1.0-0.105*x",0,9.82);
+//F1 *f2  = new TF1("f2","0.105*(x-9.82)",9.7,18);
+//f1->Draw("");
 	TGraph* g_nband = new TGraph(mk,a_1,a_2);
 	g_nband->SetLineStyle(1);
 	g_nband->SetLineColor(1);
@@ -463,7 +490,7 @@ g_band->SetFillColor(12);
 	mg->Add(g_nband,"L");
       
         mg->Add(t1);
-	mg->Add(t2);
+//	mg->Add(t2);
 	mg->Add(t3);
 	mg->Add(t4);
 	mg->Add(t5);
@@ -478,7 +505,7 @@ g_band->SetFillColor(12);
 	mg->GetXaxis()->CenterTitle();
 	mg->GetYaxis()->CenterTitle();
         mg->GetYaxis()->SetTitleSize(ax_ti);
-        mg->GetYaxis()->SetTitleOffset(ax_off);
+        mg->GetYaxis()->SetTitleOffset(ax_off-0.08);
         mg->GetYaxis()->SetLabelFont(62);
         mg->GetXaxis()->SetTitleSize(ax_ti);
         mg->GetXaxis()->SetTitleOffset(ax_offx);
@@ -487,7 +514,7 @@ g_band->SetFillColor(12);
         mg->GetXaxis()->CenterTitle();
         mg->GetXaxis()->SetLabelSize(lsz);
         mg->GetYaxis()->SetLabelSize(lsz);
-  mg->GetXaxis()->SetTickLength(0.06);
+  //mg->GetXaxis()->SetTickLength(0.06);
 
 
 
@@ -499,21 +526,21 @@ g_band->SetFillColor(12);
 	TLine * line2 = new TLine (x_d,1,x_u,1);
 	line2->SetLineStyle(2);
 	line2->Draw();
-	TLegend *leg = new TLegend(0.15,0.74,0.4,0.95);
+	TLegend *leg = new TLegend(0.15,0.75,0.4,0.95);
 	leg->AddEntry(t5,"Table 1","p");
 	leg->AddEntry(t1,"Ref. [26]","p");//Christy
 	leg->AddEntry(t7,"Ref. [27]","p"); //Qattan
 
-	leg->SetTextSize(0.04);
+	leg->SetTextSize(0.045);
 	leg->SetBorderSize(0);
 	leg->Draw();
 
-	TLegend *leg2 = new TLegend(0.3,0.74,0.45,0.95);
+	TLegend *leg2 = new TLegend(0.3,0.81,0.45,0.95);
 
-	leg2->AddEntry(t2,"Ref. [9]","p"); //Walker
+//	leg2->AddEntry(t2,"Ref. [9]","p"); //Walker
 	leg2->AddEntry(t3,"Ref. [24]","p");//NE11
 	leg2->AddEntry(t4,"Ref. [17]","p"); //Puckett
-	leg2->SetTextSize(0.04);
+	leg2->SetTextSize(0.045);
 	leg2->SetBorderSize(0);
 	leg2->Draw();
 
