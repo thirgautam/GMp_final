@@ -13,7 +13,7 @@ void Main_GMp() {
     gStyle->SetTitleFontSize(0.06);
     gStyle->SetTitleOffset(0.06);
     //gStyle->SetTitleFont(62);
-    gStyle->SetNdivisions(510);
+    gStyle->SetNdivisions(508,"Y");
     gStyle->SetTitleYOffset(0.65);
 //    gStyle->SetTitleXOffset(0.65);
     gStyle->SetTitleYSize(0.06);
@@ -22,20 +22,21 @@ void Main_GMp() {
     gStyle->SetLabelFont(62,"Y");
    // gStyle->SetTitleFont(62,"X");
     //gStyle->SetTitleFont(62,"Y");
-    gStyle->SetLabelSize(0.033,"X");
-    gStyle->SetLabelSize(0.033,"Y");
+    gStyle->SetLabelSize(0.063,"X");
+    gStyle->SetLabelSize(0.063,"Y");
     gStyle->SetPaperSize(11,22);
     gStyle->SetTickLength(0.035,"Y");
         gStyle->SetLineWidth(1.5);
        gStyle->SetPadRightMargin(0.03);
+//	gStyle->SetNdivisions(505);
 
 
-        gStyle->SetPadLeftMargin(0.14);
+        gStyle->SetPadLeftMargin(0.16);
         gStyle->SetPadBottomMargin(0.14);
         gStyle->SetPadTopMargin(0.1);
 double lsz = 0.045;
 double ax_ti = 0.06;
-double ax_off = 0.96;
+double ax_off = 1.05;
 double ax_offx = 1.1;
 
 
@@ -119,16 +120,19 @@ TCanvas *canv = new TCanvas("canv","canv",50,200,1200,1200);
 
     mg->GetXaxis()->SetTitleSize(ax_ti);
     mg->GetXaxis()->SetTitleOffset(ax_offx);
-    mg->GetXaxis()->SetLabelSize(lsz);
+
     mg->GetXaxis()->CenterTitle();
     mg->GetYaxis()->SetTitleSize(ax_ti);
+
     mg->GetYaxis()->SetTitleOffset(ax_off);
-    mg->GetYaxis()->SetLabelSize(lsz);
     mg->GetYaxis()->CenterTitle();
     mg->GetXaxis()->SetLimits(0,33);
 
    TH1F* h_k = (TH1F* )mg->Clone();
    
+
+    mg->GetYaxis()->SetLabelSize(lsz);
+    mg->GetXaxis()->SetLabelSize(lsz);
     mg->GetXaxis()->SetLimits(0,18);
     mg->GetYaxis()->SetRangeUser(0.7,1.15);
     mg->GetYaxis()->SetTitle("G_{M}/#mu_{p} G_{D}, OPE");
